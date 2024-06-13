@@ -1,10 +1,10 @@
 function updateMap() {
 	var path = 'src/';
 	path += `${presidentMap[d.president]}_`;
-	path += `${d.lousiana}_`;
+	path += `${d.louisiana}_`;
 	path += `${d.missouri}_`;
 	path += `${d.texas}_`;
-	path += `${d.fight}`;
+	path += `${d.unite}`;
 	path += '.png'
 	document.getElementById('map').src = path;
 }
