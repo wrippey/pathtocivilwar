@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>APUSH Timeline</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+		</style>
+		<style>
+			body{
+				margin: 0;
+				width: 100vw;
+				height: 100vh;
+				font-family: calibri, verdana, sans-serif;
+				display: flex;
+				flex-direction: column;
+				background: #000;
+			}
+			.top{
+				width: 100%;
+				height: 297px;
+				display: flex;
+			}
+			.map{
+				width: 600px;
+				height: 297px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.map img{
+				width: 540px;
+				height: 270px;
+			}
+			.news{
+				width: calc(90% - 600px);
+				max-height: 275px;
+				padding: 10px 5%;
+				background: #fffced;
+				box-shadow: inset 3px -3px 5px 2px #000;
+			}
+			.news_banner{
+				width: 100%;
+				height: 50px;
+				text-align: center;
+				font-family: Tinos, Georgia, Times New Roman, serif;
+				font-size: 40px;
+				font-weight: 700;
+				border-bottom: 2px #000 solid;
+			}
+			.news_content{
+				width: 100%;
+				height: calc(100% - 50px);
+				overflow: auto;
+				display: flex;
+				flex-direction: column;
+			}
+			.article{
+				font-family: Open Sans, Helvetica, sans-serif;
+				font-weight: 800;
+				margin: 10px 0;
+			}
+			.article_title{
+				font-size: 1.25em;
+				text-transform: uppercase;
+			}
+			.article_content{
+				font-weight: 400;
+			}
+			.main{
+				width: 100vw;
+				height: calc( 100% - 300px - 100px);
+				display: flex;
+				color: #fff;
+				font-family: Open Sans, Verdana, Calibri, serif;
+			}
+			.president{
+				width: 250px;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.president img{
+				width: 225px;
+			}
+			.policy{
+				width: calc(100% - 250px);
+				height: 90%;
+				display: flex;
+				flex-direction: column;
+			}
+			.policy_title{
+				width: 90%;
+				margin: 10px 5%;
+				text-align: center;
+				font-size: 30px;
+				font-weight: 700;
+			}
+			.policy_content{
+				width: 90%;
+				margin: 10px 5%;
+				font-size: 20px;
+				flex: 1;
+				color: #ddd;
+			}
+			.policy_answer{
+				width: 100%;
+				height: 50px;
+				display: flex;
+				justify-content: space-evenly;
+			}
+			.policy_answer div{
+				padding: 5px 15px;
+				border-radius: 10px;
+				height: 20px;
+				cursor: pointer;
+				user-select: none;
+				transition: 0.3s;
+				font-weight: 900;
+			}
+			.policy_approve{
+				color: #0a0;
+				border: 2px solid #0a0;
+			}
+			.policy_approve:hover{
+				background: #0a0;
+				color: #000;
+			}
+			.policy_veto{
+				color: #d00;
+				border: 2px solid #d00;
+			}
+			.policy_veto:hover{
+				background: #d00;
+				color: #000;
+			}
+			.policy_impact{
+				width: 90%;
+				margin: 50px 5%;
+				font-size: 20px;
+				text-align: center;
+				flex: 1;
+				color: #ddd;
+			}
+			.policy_okay{
+				padding: 10px 0;
+				margin: 0 calc( (100% - 104px)/2 );
+				border: 2px #fff solid;
+				width: 100px;
+				text-align: center;
+				cursor: pointer;
+				user-select: none;
+				transition: 0.3s;
+			}
+			.policy_okay:hover{
+				background: #fff;
+				color: #000;
+			}
+			.policy_done{
+				width: 90%;
+				margin: 0 5%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				font-size: 30px;
+				color: #ddd;
+			}
+			.bottom{
+				width: 100%;
+				height: 98px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.next_btn{
+				font-size: 20px;
+				padding: 10px 0;
+				width: 80%;
+				text-align: center;
+				border: 2px solid #fff;
+				color: #fff;
+				cursor: pointer;
+				user-select: none;
+				transition: 0.3s;
+				text-transform: uppercase;
+			}
+			.next_btn:hover{
+				background: #fff;
+				color: #000;
+			}
+			.no_show{
+				display: none;
+			}
+			.menu{
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				background-image: url('src/menu.png');
+				background-size: cover;
+				background-position: center;
+			}
+			.menu_start{
+				position: absolute;
+				top: calc( 100% - 50px);
+				font-size: 20px;
+				width: 100%;
+				text-align: center;
+				cursor: default;
+				user-select: none;
+				animation: 3s infinite alternate menu_btn;
+			}
+
+			@keyframes menu_btn {
+				0% {
+					transform: scale(1);
+					opacity: 0.75;
+				}
+				50% {
+					transform: scale(1.2);
+					opacity: 1;
+				}
+				100% {
+					transform: scale(1);
+					opacity: 0.75;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="menu">
+			<div class="menu_start">Click Anywhere to Start</div>
+		</div>
+		<div class="top">
+			<div class="map">
+				<img id="map" src="src/0_0_0_0_0.png">
+			</div>
+			<div class="news">
+				<div class="news_banner">NEWS</div>
+				<div class="news_content">
+					<div class="article">
+						<div class="article_title">News Article Title</div>
+						<div class="article_content">Article Content</div>
+					</div>
+					<div class="article">
+						<div class="article_title">News Article Title</div>
+						<div class="article_content">Article Content</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main">
+			<div class="president">
+				<img id="president">
+			</div>
+			<div class="policy">
+				<div class="policy_title">Jefferson would like to purchase the Lousiana Territory from France for $15,000,000</div>
+				<div class="policy_content">The Lousiana territory, owned by the French, is being offered to the United States for a price of $15 million. The French, with their ongoing revolution, are looking for some quick cash. It would be instrumental in future growth of the United States by doubling total U.S lands and setting pace for future land grabs.</div>
+				<div class="policy_answer">
+					<div class="policy_approve">Yes</div>
+					<div class="policy_veto">No</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="next_btn">Next President</div>
+		</div>
+	</body>
+	<script type="text/javascript" src='data.js'></script>
+	<script type="text/javascript" src='news.js'></script>
+	<script type="text/javascript" src='policy.js'></script>
+	<script type="text/javascript" src='map.js'></script>
+	<script type="text/javascript">
+		function newPresident() {
+			d.president += 1;
+			d.policy = -1;
+			pres = c[d.president];
+			// Set President Image
+			document.getElementById("president").src = pres.img;
+			document.querySelector(".next_btn").classList.add("no_show");
+			updateNews();
+			updatePolicy();
+			updateMap();
+		}
+		newPresident();
+
+		document.querySelector('.next_btn').addEventListener('click', () => {
+			newPresident();
+		})
+
+		document.querySelector('.menu').addEventListener('click', () => {
+			document.querySelector('.menu').classList.add('no_show');
+		})
+	</script>
+</html>
