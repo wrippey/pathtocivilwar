@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>APUSH Timeline</title>
+		<link rel="icon" type="image/x-icon" href="src/favicon.png">
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 			@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
@@ -193,9 +194,6 @@
 				background: #fff;
 				color: #000;
 			}
-			.no_show{
-				display: none;
-			}
 			.menu{
 				position: fixed;
 				top: 0;
@@ -205,6 +203,7 @@
 				background-image: url('src/menu.png');
 				background-size: cover;
 				background-position: center;
+				z-index: 1;
 			}
 			.menu_start{
 				position: absolute;
@@ -231,9 +230,117 @@
 					opacity: 0.75;
 				}
 			}
+			.end{
+				z-index: 2;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: #000;
+				color: #fff;
+			}
+			.end_top{
+				width: 100%;
+				height: 400px;
+				display: flex;
+				justify-content: center;
+			}
+			#end_map{
+				height: 100%;
+			}
+			.end_bottom{
+				width: 100%;
+				font-family: Open Sans, Verdana, Calibri, serif;
+			}
+			.end_status{
+				width: 100%;
+				text-align: center;
+				font-size: 30px;
+				font-weight: 700;
+			}
+			.end_content{
+				width: 90%;
+				padding: 10px 5%;
+			}
+			.start_over{
+				position: absolute;
+				top: 20px;
+				left: calc( 100% - (150px + 30px));
+				width: 150px;
+				height: 50px;
+				background: #fff;
+				color: #000;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				cursor: pointer;
+				user-select: none;
+				transition: 0.3s;
+			}
+			.start_over:hover{
+				background: #ccc;
+			}
+			.no_show{
+				display: none;
+			}
+			.stats{
+				width:150px;
+				height: 100%;
+				display: flex;
+				align-items: flex-end;
+			}
+			.chart{
+				width: 50px;
+				display: flex;
+				flex-direction: column;
+			}
+			.bar{
+				width: 10px;
+				height: 100px;
+				margin: 5px 20px;
+				border-radius: 100px;
+				display: flex;
+				align-items: flex-end;
+				background: #555;
+				overflow: hidden;
+				position: relative;
+			}
+			.chart_name{
+				width: 100%;
+				text-align: center;
+			}
+			#north{
+				width: 100%;
+				height: 50px;
+				background: #00f;
+				transition: 1s;
+			}
+			#south{
+				width: 100%;
+				height: 50px;
+				background: #f00;
+				transition: 1s;
+			}
+			#resistance{
+				width: 100%;
+				height: 50px;
+				background: #0f0;
+				transition: 1s;
+			}
+			.minimum{
+				width: 100%;
+				height: 4px;
+				background: #f00a;
+				position: absolute;
+				left: 0;
+				top: 59px;
+			}
 		</style>
 	</head>
 	<body>
+		
 		<div class="menu">
 			<div class="menu_start">Click Anywhere to Start</div>
 		</div>
@@ -267,35 +374,128 @@
 					<div class="policy_veto">No</div>
 				</div>
 			</div>
+			<div class="stats">
+				<div class="chart">
+					<div class="bar">
+						<div id="north"></div>
+					</div>
+					<div class="chart_name">N</div>
+				</div>
+				<div class="chart">
+					<div class="bar">
+						<div id="south"></div>
+					</div>
+					<div class="chart_name">S</div>
+				</div>
+				<div class="chart">
+					<div class="bar">
+						<div id="resistance"></div>
+						<div class="minimum"></div>
+					</div>
+					<div class="chart_name">R</div>
+				</div>
+			</div>
 		</div>
 		<div class="bottom">
 			<div class="next_btn">Next President</div>
+		</div>
+		<div class="end no_show">
+			<div class="end_top">
+				<img id="end_map" src="src/9_1_1_1_1.png">
+			</div>
+			<div class="end_bottom">
+				<div class="end_status">Union NOT Preserved</div>
+				<div class="end_content">After a long 4 years of fighting...</div>
+			</div>
+			<div class="start_over">Start Over</div>
 		</div>
 	</body>
 	<script type="text/javascript" src='data.js'></script>
 	<script type="text/javascript" src='news.js'></script>
 	<script type="text/javascript" src='policy.js'></script>
 	<script type="text/javascript" src='map.js'></script>
+	<script type="text/javascript" src='final.js'></script>
 	<script type="text/javascript">
 		function newPresident() {
+			// adds points from news before resetting
+			if (d.president >= 0) {
+				var news = c[d.president].policies;
+				for ( let i=0; i<news.length; i++ ) {
+					if (n[ news[i] ].prerequisite.length > 0) {
+						if (d[ n[news[i]].prerequisite[0] ] == n[news[i]].prerequisite[1]) {	
+							s.north += n[ news[i] ].result[0];
+							s.south += n[ news[i] ].result[1];
+							s.resistance += n[ news[i] ].result[2];
+						}
+					} else {
+						s.north += n[ news[i] ].result[0];
+						s.south += n[ news[i] ].result[1];
+						s.resistance += n[ news[i] ].result[2];
+					}
+				}
+			}
+			// Sets president & resets policy
 			d.president += 1;
+			// Checks if game is ready to end
+			console.log(d.president);
+			if (d.president == 13 ) {
+				if (s.resistance < 5) {
+					d.president += 1;
+					ending(getEnding());
+					return;
+				}
+			}
+			if (d.president > 13) {
+				ending(getEnding());
+				return;
+			}
 			d.policy = -1;
 			pres = c[d.president];
 			// Set President Image
 			document.getElementById("president").src = pres.img;
 			document.querySelector(".next_btn").classList.add("no_show");
+			// Updates
 			updateNews();
 			updatePolicy();
 			updateMap();
 		}
-		newPresident();
 
 		document.querySelector('.next_btn').addEventListener('click', () => {
 			newPresident();
-		})
+		});
 
 		document.querySelector('.menu').addEventListener('click', () => {
 			document.querySelector('.menu').classList.add('no_show');
+		});
+
+		document.querySelector('.start_over').addEventListener('click', () => {
+			document.querySelector('.end').classList.add('no_show');
+			document.querySelector('.menu').classList.remove('no_show');
+			s = {
+				north: 5,
+				south: 5,
+				resistance: 0
+			}
+			d = {
+				president: -1,
+				policy: 0,
+				"louisiana": 0,
+				"1812": 0,
+				"missouri": 0,
+				"1828": 0,
+				"texasfree": 0,
+				"texas": 0,
+				"kansas": 0,
+				"fight": 0,
+				"unite": 0
+			}
+			newPresident();
 		})
+
+		document.getElementById('north').style.height = `${Math.round( s.north / 19 * 100)}px`;
+		document.getElementById('south').style.height = `${Math.round( s.south / 16 * 100)}px`;
+		document.getElementById('resistance').style.height = `${Math.round( s.resistance / 13 * 100)}px`;
+
+		newPresident();
 	</script>
 </html>
