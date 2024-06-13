@@ -5,7 +5,7 @@ function updateMap() {
 	path += `${d.missouri}_`;
 	path += `${d.texas}_`;
 	path += `${d.unite}`;
-	path += '.png'
+	path += '.png';
 	document.getElementById('map').src = path;
 }
 
