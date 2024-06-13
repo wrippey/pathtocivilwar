@@ -1,5 +1,4 @@
 function updatePolicy() {
-	console.log(s);
 	// Add to policy number
 	d.policy += 1;
 	// Remove html content
@@ -13,7 +12,6 @@ function updatePolicy() {
 		policy.append(done);
 		document.querySelector('.next_btn').classList.remove('no_show');
 	} else {
-		console.log(p[ pres.policies[d.policy] ].prerequisite);
 		if (meetPrerequisite(p[ pres.policies[d.policy] ].prerequisite) == true) {
 			var title = document.createElement('div'); title.classList.add('policy_title'); title.textContent = p[ pres.policies[d.policy]].title;
 			var content = document.createElement('div'); content.classList.add('policy_content'); content.textContent = p[ pres.policies[d.policy] ].content;
@@ -41,8 +39,11 @@ function updatePolicy() {
 function policyImpact(curr) {
 	var obj = p[ c[ d.president ].policies[ d.policy ] ];
 	s.north += obj[curr][0];
+	document.getElementById('north').style.height = `${Math.round( s.north / 19 * 100)}px`;
 	s.south += obj[curr][1];
+	document.getElementById('south').style.height = `${Math.round( s.south / 16 * 100)}px`;
 	s.resistance += obj[curr][2];
+	document.getElementById('resistance').style.height = `${Math.round( s.resistance / 13 * 100)}px`;
 
 	var policy = document.querySelector('.policy')
 	policy.innerHTML = '';
