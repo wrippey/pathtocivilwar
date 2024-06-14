@@ -14,13 +14,13 @@ var c /*content*/ = [
 	},
 	{
 		name: "Monroe",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/T/V/Main%20Index/Portraits/31.tif.mSeIqerjMf856c1hQA0A.Cl1OEYWopj.jpg",
+		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/N/T/Main%20Index/Portraits/31.tif.mSeIkvrjMf856c1hQA0A.5CIVoAnCw1.jpg",
 		policies: [3, 4],
 		news: [4, 5]
 	},
 	{
 		name: "Adams",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/0/Z/Main%20Index/Presidents/John%20Quincy%20Adams/33.tif.mSfhsuzjMa0PL-lhQA0A.hbaBVXhgll.jpg",
+		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/g/V/Main%20Index/Presidents/John%20Quincy%20Adams/33.tif.mSfhm_zjMa0PL-lhQA0A.izNOegqtT0.jpg",
 		policies: [5],
 		news: [6]
 	},
@@ -32,7 +32,7 @@ var c /*content*/ = [
 	},
 	{
 		name: "Van Buren",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/m/t/Main%20Index/Presidents/Martin%20Van%20Buren/40.tif.mSfIgOzjMb8PL-lhQA0A.mJzWVJDG4f.jpg",
+		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/f/T/Main%20Index/Presidents/Martin%20Van%20Buren/40.tif.mSfI6fvjMb8PL-lhQA0A.hFSSWTVB4M.jpg",
 		policies: [8, 9],
 		news: [9]
 	},
@@ -50,7 +50,7 @@ var c /*content*/ = [
 	},
 	{
 		name: "Polk",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/4/K/Main%20Index/Portraits/30.tif.mSfyt-zjMQE76c1hQA0A.cjblWgLVm9.jpg",
+		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/_/L/Main%20Index/Portraits/30.tif.mSfyoPzjMQE76c1hQA0A.LfJIRKpqKe.jpg",
 		policies: [12, 13],
 		news: [12]
 	},
@@ -80,7 +80,7 @@ var c /*content*/ = [
 	},
 	{
 		name: "Lincoln",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/r/Q/Main%20Index/Portraits/5.tif.mSfCqe3jMS1H6c1hQA0A.fc8BqBb7Z3.jpg",
+		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/R/q/Main%20Index/Portraits/5.tif.mSfCkv3jMS1H6c1hQA0A.cqW8KHu9Um.jpg",
 		policies: [17],
 		news: [20]
 	}
