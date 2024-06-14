@@ -2,85 +2,85 @@
 var c /*content*/ = [
 	{
 		name: "Jefferson",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/3/0/Main%20Index/Portraits/55.tif.mSecwe7jMVNB6c1hQA0A.mcwa0iqVzN.jpg",
+		img: "src/jefferson.jpg",
 		policies: [0, 1],
 		news: [0, 1]
 	},
 	{
 		name: "Madison",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/a/F/Main%20Index/Portraits/24.tif.mSfv1PLjMVtJ6c1hQA0A.SZxQheNkhi.jpg",
+		img: "src/madison.jpg",
 		policies: [2],
 		news: [2, 3]
 	},
 	{
 		name: "Monroe",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/N/T/Main%20Index/Portraits/31.tif.mSeIkvrjMf856c1hQA0A.5CIVoAnCw1.jpg",
+		img: "src/monroe.jpg",
 		policies: [3, 4],
 		news: [4, 5]
 	},
 	{
 		name: "Adams",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/g/V/Main%20Index/Presidents/John%20Quincy%20Adams/33.tif.mSfhm_zjMa0PL-lhQA0A.izNOegqtT0.jpg",
+		img: "src/adams.jpg",
 		policies: [5],
 		news: [6]
 	},
 	{
 		name: "Jackson",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/O/q/Main%20Index/Presidents/Andrew%20Jackson/4.tif.mSfNr_TjMbXXIethQA0A.DAB1KbWBnC.jpg",
+		img: "src/jackson.jpg",
 		policies: [6, 7],
 		news: [7, 8]
 	},
 	{
 		name: "Van Buren",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/f/T/Main%20Index/Presidents/Martin%20Van%20Buren/40.tif.mSfI6fvjMb8PL-lhQA0A.hFSSWTVB4M.jpg",
+		img: "src/vanburen.jpg",
 		policies: [8, 9],
 		news: [9]
 	},
 	{
 		name: "Harrison",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/b/Y/Main%20Index/Portraits/60.tif.mSeJ-vbjMSk76c1hQA0A._k2Gg7Z45K.jpg",
+		img: "src/harrison.jpg",
 		policies: [],
 		news: [10]
 	},
 	{
 		name: "Tyler",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/-/M/Main%20Index/Presidents/John%20Tyler/659.tif.mSe0h_LjMZUTL-lhQA0A.4iE0pgb0Za.jpg",
+		img: "src/tyler.jpg",
 		policies: [10, 11],
 		news: [11]
 	},
 	{
 		name: "Polk",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/_/L/Main%20Index/Portraits/30.tif.mSfyoPzjMQE76c1hQA0A.LfJIRKpqKe.jpg",
+		img: "src/polk.jpg",
 		policies: [12, 13],
 		news: [12]
 	},
 	{
 		name: "Taylor",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/b/s/Main%20Index/Portraits/64.tif.mSfg-fDjMRc76c1hQA0A.mtYdM-dDaI.jpg",
+		img: "src/taylor.jpg",
 		policies: [],
 		news: [13]
 	},
 	{
 		name: "Fillmore",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/E/v/Main%20Index/Portraits/38.tif.mSem1_PjMU1J6c1hQA0A.3HUrO_FS5V.jpg",
+		img: "src/fillmore.jpg",
 		policies: [14],
 		news: [14, 15]
 	},
 	{
 		name: "Pierce",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/W/9/Main%20Index/Portraits/14.tif.mSewnPXjMQNH6c1hQA0A.0i3mfa-3mN.jpg",
+		img: "src/pierce.jpg",
 		policies: [15],
 		news: [16, 17, 18]
 	},
 	{
 		name: "Buchanon",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/X/K/Main%20Index/Portraits/122.tif.mSedlvTjMc856c1hQA0A.81-trc56vp.jpg",
+		img: "src/buchanon.jpg",
 		policies: [16],
 		news: [19]
 	},
 	{
 		name: "Lincoln",
-		img: "https://library.whitehousehistory.org/fotoweb/cache/v2/R/q/Main%20Index/Portraits/5.tif.mSfCkv3jMS1H6c1hQA0A.cqW8KHu9Um.jpg",
+		img: "src/lincoln.jpg",
 		policies: [17],
 		news: [20]
 	}
